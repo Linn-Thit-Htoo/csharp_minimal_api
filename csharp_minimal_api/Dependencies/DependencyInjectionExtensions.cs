@@ -9,6 +9,7 @@ namespace csharp_minimal_api.Dependencies
             builder.Configuration.SetBasePath(builder.Environment.ContentRootPath)
                 .AddJsonFile($"appsettings.{builder.Environment.EnvironmentName}.json", optional: false, reloadOnChange: true)
                 .AddEnvironmentVariables();
+
             builder.Services.AddSingleton<IBlogService, BlogService>();
             builder.Services.Configure<Microsoft.AspNetCore.Http.Json.JsonOptions>(opt =>
             {
